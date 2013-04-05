@@ -5,7 +5,17 @@ Feature: Reporting time intervals
     Then I should see "<result>"
 
     Examples:
+      | from_time           | to_time             | result      |
+      | 2012-01-01 10:01:00 | 2012-01-01 10:02:00 | 00:00:01    |
+      | 2012-01-01 10:01:00 | 2012-01-01 12:02:00 | 00:02:01    |
+      | 2012-01-01 10:01:00 | 2012-01-16 15:02:00 | 15:05:01    |
+      | 2012-01-01 10:01:00 | 2012-01-05 15:02:40 | 04:05:01:40 |
+
+  Scenario Outline: Parsing a basic time interval while ignoring seconds
+    When I report the interval between "<from_time>" and "<to_time>" ignoring seconds
+    Then I should see "<result>"
+
+    Examples:
       | from_time           | to_time             | result   |
       | 2012-01-01 10:01:00 | 2012-01-01 10:02:00 | 00:00:01 |
-      | 2012-01-01 10:01:00 | 2012-01-01 12:02:00 | 00:02:01 |
-      | 2012-01-01 10:01:00 | 2012-01-16 15:02:00 | 15:05:01 |
+      | 2012-01-01 10:01:00 | 2012-01-05 15:02:40 | 04:05:01 |
