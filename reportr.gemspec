@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Michael Berkowitz"]
   spec.email         = ["michael.berkowitz@gmail.com"]
   spec.description   = %q{Simple time interval formatter}
-  spec.summary       = %q{Simple formatter for time intervals from seconds to years}
+  spec.summary       = %q{Simple formatter for time intervals from seconds to days}
   spec.homepage      = ""
   spec.license       = "MIT"
 
